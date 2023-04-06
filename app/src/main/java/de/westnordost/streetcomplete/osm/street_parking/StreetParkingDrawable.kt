@@ -18,10 +18,8 @@ import de.westnordost.streetcomplete.osm.street_parking.ParkingPosition.PAINTED_
 import de.westnordost.streetcomplete.osm.street_parking.ParkingPosition.STAGGERED_HALF_ON_STREET
 import de.westnordost.streetcomplete.osm.street_parking.ParkingPosition.STAGGERED_ON_STREET
 import de.westnordost.streetcomplete.osm.street_parking.ParkingPosition.STREET_SIDE
-import de.westnordost.streetcomplete.util.ktx.isApril1st
 import kotlin.math.ceil
 import kotlin.math.round
-import kotlin.random.Random
 
 /** Drawable that displays parking cars in the given orientation and position in the given size */
 class StreetParkingDrawable(
@@ -67,7 +65,7 @@ class StreetParkingDrawable(
         val carRotation = parkingOrientation.carsRotation
         val carCount = parkingOrientation.carCount
         val backgroundResId = getStreetDrawableResId(parkingOrientation, parkingPosition)
-        val nyanResId = if (isApril1st()) R.drawable.car_nyan else null
+        val nyanResId = R.drawable.car_nyan
         val repeats = ceil(bounds.height() / height).toInt()
 
         // drawing the street background
@@ -89,9 +87,7 @@ class StreetParkingDrawable(
         // drawing the cars
         for (i in 0 until carCount * repeats) {
             if (i % carCount in omittedCarIndices) continue
-            val carResId =
-                nyanResId ?: staticCarDrawableResId ?: CAR_RES_IDS[Random.nextInt(CAR_RES_IDS.size)]
-            val car = context.getDrawable(carResId)!!
+            val car = context.getDrawable(nyanResId)!!
             val carHeight = car.intrinsicHeight * carWidth / car.intrinsicWidth
             val paddingY = (height / carCount - carHeight) / 2
             val carY = (1f * height / carCount * i + paddingY + phase * height) % (height * repeats)

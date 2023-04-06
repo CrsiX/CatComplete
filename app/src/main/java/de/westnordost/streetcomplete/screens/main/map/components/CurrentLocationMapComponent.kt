@@ -8,7 +8,6 @@ import de.westnordost.streetcomplete.R
 import de.westnordost.streetcomplete.screens.main.map.tangram.KtMapController
 import de.westnordost.streetcomplete.screens.main.map.tangram.Marker
 import de.westnordost.streetcomplete.util.ktx.getBitmapDrawable
-import de.westnordost.streetcomplete.util.ktx.isApril1st
 import de.westnordost.streetcomplete.util.ktx.pxToDp
 import de.westnordost.streetcomplete.util.ktx.toLatLon
 import de.westnordost.streetcomplete.util.math.EARTH_CIRCUMFERENCE
@@ -63,7 +62,7 @@ class CurrentLocationMapComponent(ctx: Context, private val ctrl: KtMapControlle
         }
 
     init {
-        val dotImg = ctx.resources.getBitmapDrawable(if (isApril1st()) R.drawable.location_nyan else R.drawable.location_dot)
+        val dotImg = ctx.resources.getBitmapDrawable(R.drawable.location_nyan)
         val dotSize = PointF(
             ctx.pxToDp(dotImg.bitmap.width),
             ctx.pxToDp(dotImg.bitmap.height)
