@@ -1,3 +1,13 @@
+# CatComplete
+
+**Cat**Complete is a fork of [StreetComplete](https://github.com/streetcomplete/StreetComplete), which enables **NyanCat** and **rainbow stripes** for you everyday!
+
+What originated as joke for April, 1st, is now the default setting! See [Issue 4919](https://github.com/streetcomplete/StreetComplete/issues/4919) and [Issue 3937](https://github.com/streetcomplete/StreetComplete/issues/3937) for the origin of this idea.
+
+This fork uses a _different_ package name which allows installing side-by-side with the original StreetComplete app.
+
+# Original StreetComplete
+
 ![StreetComplete](http://www.westnordost.de/streetcomplete/featureGraphic.png)
 
 StreetComplete is an easy to use editor of OpenStreetMap data available for Android. It can be used without any OpenStreetMap-specific knowledge. It asks simple questions, with answers directly used to edit and improve OpenStreetMap data. The app is aimed at users who do not know anything about OSM tagging schemes but still want to contribute to OpenStreetMap.
