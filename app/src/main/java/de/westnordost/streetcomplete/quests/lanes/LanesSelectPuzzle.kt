@@ -23,7 +23,6 @@ import de.westnordost.streetcomplete.quests.lanes.LineStyle.CONTINUOUS
 import de.westnordost.streetcomplete.quests.lanes.LineStyle.DASHES
 import de.westnordost.streetcomplete.quests.lanes.LineStyle.SHORT_DASHES
 import de.westnordost.streetcomplete.util.ktx.getBitmapDrawable
-import de.westnordost.streetcomplete.util.ktx.isApril1st
 import de.westnordost.streetcomplete.util.ktx.showTapHint
 import kotlin.math.max
 import kotlin.random.Random
@@ -182,7 +181,7 @@ class LanesSelectPuzzle @JvmOverloads constructor(
     init {
         setWillNotDraw(false)
 
-        val carResIds = if (isApril1st()) listOf(R.drawable.car_nyan) else CAR_RES_IDS
+        val carResIds = listOf(R.drawable.car_nyan)
         carBitmaps = carResIds.map { resources.getBitmapDrawable(it).bitmap }
 
         binding = ViewLanesSelectPuzzleBinding.inflate(LayoutInflater.from(context), this)
